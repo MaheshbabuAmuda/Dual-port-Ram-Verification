@@ -14,46 +14,36 @@ Note: The RTL/DUT source code is proprietary material and is intentionally not i
 <img width="391" height="384" alt="image" src="https://github.com/user-attachments/assets/7c92d789-46ec-42f1-9aea-3ca016fd6fb3" />
 
 UVM Components
-Write Agent
+**Write Agent**
 
 The write agent generates and drives write transactions to the DUT.
 
 It contains:
 
-Write Sequencer
-Write Driver
-Write Monitor
-Write Agent Configuration
-Read Agent
+Write Sequencer, Write Driver, Write Monitor, Write Agent Configuration
+
+**Read Agent**
 
 The read agent generates and monitors read transactions.
 
 It contains:
 
-Read Sequencer
-Read Driver
-Read Monitor
-Read Agent Configuration
-Virtual Sequencer
+Read Sequencer, Read Driver, Read Monitor, Read Agent Configuration
+
+**Virtual Sequencer**
 
 The virtual sequencer coordinates the write and read sequencers and allows multiple agents to be controlled from a single virtual sequence.
 
 
-Scoreboard
+**Scoreboard**
 
 The scoreboard provides self-checking functionality.
 
 It contains:
 
-Write transaction FIFO
-Read transaction FIFO
-Reference memory model
-Data comparison logic
-Scoreboard statistics
-Functional coverage
+Write transaction FIFO, Read transaction FIFO, Reference memory model, Data comparison logic, Scoreboard statistics, Functional coverage
 
-
-Reference Model
+**Reference Model**
 
 An associative array is used as the memory reference model:
 
@@ -62,6 +52,7 @@ logic [63:0] ref_data [bit [31:0]];
 The reference model stores the expected data during write operations.
 
 During a read operation, the expected data is retrieved from the reference model and compared with the data received from the DUT.
+
 <img width="397" height="174" alt="image" src="https://github.com/user-attachments/assets/5f11b38c-cbc7-444a-9b5e-b2d4a05584d5" />
 
 Test Scenarios
